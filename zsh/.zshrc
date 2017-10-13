@@ -7,6 +7,7 @@ antigen bundle colored-man-pages
 antigen bundle command-not-found
 antigen bundle extract
 antigen bundle pass
+antigen bundle git
 #antigen bundle safe-paste
 
 #Build tools
@@ -26,7 +27,6 @@ antigen bundle zsh-users/zsh-completions
 
 # Other repos
 
-antigen bundle keithhamilton/oh-my-dogesh
 antigen bundle arzzen/calc.plugin.zsh
 antigen bundle MichaelAquilina/zsh-you-should-use
 
