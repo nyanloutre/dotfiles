@@ -7,7 +7,7 @@ antigen bundle colored-man-pages
 antigen bundle command-not-found
 antigen bundle extract
 antigen bundle pass
-antigen bundle safe-paste
+#antigen bundle safe-paste
 
 #Build tools
 antigen bundle docker
@@ -28,10 +28,10 @@ antigen bundle zsh-users/zsh-completions
 
 antigen bundle keithhamilton/oh-my-dogesh
 antigen bundle arzzen/calc.plugin.zsh
-antigen bundle b4b4r07/emoji-cli
 antigen bundle MichaelAquilina/zsh-you-should-use
 
 #antigen theme bureau
+
 SPACESHIP_TIME_SHOW=true
 SPACESHIP_KUBECONTEXT_SHOW=false
 antigen theme denysdovhan/spaceship-zsh-theme spaceship
