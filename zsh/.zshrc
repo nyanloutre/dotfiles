@@ -34,6 +34,7 @@ antigen bundle MichaelAquilina/zsh-you-should-use
 
 SPACESHIP_TIME_SHOW=true
 SPACESHIP_KUBECONTEXT_SHOW=false
+SPACESHIP_BATTERY_THRESHOLD=90
 antigen theme denysdovhan/spaceship-zsh-theme spaceship
 
 #antigen theme landongn/zshcomrade
