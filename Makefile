@@ -3,3 +3,4 @@ all:
 	stow konsole
 	stow neovim
 	stow ssh
+	stow docker
