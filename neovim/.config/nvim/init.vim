@@ -4,18 +4,10 @@ Plug 'tpope/vim-sensible'
 Plug 'sheerun/vim-polyglot'
 Plug 'vim-airline/vim-airline'
 Plug 'mhinz/vim-startify'
-Plug 'vim-syntastic/syntastic'
 Plug 'dpelle/vim-Grammalecte'
+Plug 'roxma/nvim-completion-manager'
+Plug 'w0rp/ale'
 
 call plug#end()
-
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
 
 let g:grammalecte_cli_py='/usr/share/grammalecte-fr/cli.py'
