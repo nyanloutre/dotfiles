@@ -4,3 +4,4 @@ all:
 	stow neovim
 	stow ssh
 	stow docker
+	stow gnupg
