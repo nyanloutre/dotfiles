@@ -43,7 +43,3 @@ antigen apply
 
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 export EDITOR=/usr/bin/nvim
-
-#GoPass completion
-
-source <(gopass completion zsh)
