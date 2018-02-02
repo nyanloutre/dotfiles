@@ -5,3 +5,4 @@ all:
 	stow ssh
 	stow docker
 	stow gnupg
+	stow trizen
