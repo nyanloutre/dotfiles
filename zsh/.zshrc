@@ -1,45 +1,52 @@
-source /usr/share/zsh/share/antigen.zsh
-
-antigen use oh-my-zsh
-
+source ~/.zplug/init.zsh
+ 
+zplug 'zplug/zplug', hook-build:'zplug --self-manage'
+ 
 #Productivity
-antigen bundle colored-man-pages
-antigen bundle command-not-found
-antigen bundle extract
-antigen bundle pass
-antigen bundle git
-#antigen bundle safe-paste
-
+zplug "plugin/colored-man-pages", from:oh-my-zsh
+zplug "plugin/command-not-found", from:oh-my-zsh
+zplug "plugin/extract", from:oh-my-zsh
+zplug "plugin/pass", from:oh-my-zsh
+zplug "plugin/git", from:oh-my-zsh
+ 
 #Build tools
-antigen bundle docker
-
+zplug "plugin/docker", from:oh-my-zsh
+ 
 #Distro-related
-antigen bundle archlinux
-
+zplug "plugin/archlinux", from:oh-my-zsh
+ 
 #Misc
-antigen bundle nyan
-
+zplug "plugin/nyan", from:oh-my-zsh
+ 
 #zsh-users repo
-antigen bundle zsh-users/zsh-syntax-highlighting
-antigen bundle zsh-users/zsh-autosuggestions
-antigen bundle zsh-users/zsh-history-substring-search
-antigen bundle zsh-users/zsh-completions
-
+zplug "zsh-users/zsh-syntax-highlighting", from:github
+zplug "zsh-users/zsh-autosuggestions", from:github
+zplug "zsh-users/zsh-history-substring-search", from:github
+zplug "zsh-users/zsh-completions", from:github
+ 
 # Other repos
-
-antigen bundle arzzen/calc.plugin.zsh
-antigen bundle MichaelAquilina/zsh-you-should-use
-
-#antigen theme bureau
-
-SPACESHIP_TIME_SHOW=true
-SPACESHIP_KUBECONTEXT_SHOW=false
-SPACESHIP_BATTERY_THRESHOLD=90
-antigen theme denysdovhan/spaceship-zsh-theme spaceship
-
-#antigen theme landongn/zshcomrade
-
-antigen apply
-
+ 
+zplug "arzzen/calc.plugin.zsh", from:github
+zplug "MichaelAquilina/zsh-you-should-use", from:github
+ 
+autoload -Uz is-at-least
+if is-at-least 5.0.6; then
+	SPACESHIP_TIME_SHOW=true
+	SPACESHIP_BATTERY_THRESHOLD=90
+	zplug "denysdovhan/spaceship-zsh-theme", use:spaceship.zsh, from:github, as:theme
+else
+	zplug "themes/bureau", from:oh-my-zsh, as:theme
+fi
+ 
+zplug load
+ 
+export HISTFILE=~/.zsh_history
+export HISTSIZE=10000
+export SAVEHIST=10000
+ 
+if [[ -f $(which helm) ]]; then
+	source <(helm completion zsh)
+fi
+ 
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
-export EDITOR=/usr/bin/nvim
+export EDITOR=/usr/bin/vim
